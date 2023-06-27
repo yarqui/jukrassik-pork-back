@@ -1,8 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import cors from "cors";
-import { ctrlWrapper } from "./utils/index.js";
-import userRouter from "./routes/api/users/users.js";
+import userRouter from "./routes/api/users.js";
 
 const app = express();
 
