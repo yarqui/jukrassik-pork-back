@@ -1,6 +1,8 @@
-const express = require("express");
-const logger = require("morgan");
-const cors = require("cors");
+import express from "express";
+import logger from "morgan";
+import cors from "cors";
+import { ctrlWrapper } from "./utils/index.js";
+import userRouter from "./routes/api/users/users.js";
 
 const app = express();
 
@@ -10,7 +12,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-// here goes routes
+app.use("/api/user", userRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
@@ -22,4 +24,4 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-module.exports = app;
+export default app;
