@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { ctrlWrapper } from "../utils/ctrlWrapper.js";
+import ctrlWrapper from "../utils/ctrlWrapper.js";
 import sendEmail from "../utils/sendEmail.js";
 
 config();
@@ -10,7 +10,7 @@ const sendLeadToEmail = (req, res) => {
   const { email, name, message } = req.body;
 
   const emailData = {
-    to: `${email}`, // TODO: change it to EMAIL_SENDER when everything is set
+    to: `${EMAIL_SENDER}`,
     subject: `Вам надіслано новий запит від ${name}`,
     text: `Контактні дані: Пошта: ${email}, Ім'я: ${name}, Коментар: ${message} `,
     html: `<p>Контактні дані:</p>

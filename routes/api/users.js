@@ -1,8 +1,10 @@
 import express from "express";
 import sendLeadToEmail from "../../controllers/users.js";
+import formSchema from "../../schemas/formSchema.js";
+import validateBody from "../../middlewares/validateBody.js";
 
 const router = express.Router();
 
-router.post("/", sendLeadToEmail);
+router.post("/", validateBody(formSchema), sendLeadToEmail);
 
 export default router;
