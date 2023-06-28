@@ -22,7 +22,7 @@ const sendLeadToEmail = (req, res) => {
 
   sendEmail(emailData);
 
-  res.status(200).json(emailData);
+  res.status(200).json("Message sent successfully");
 };
 
 export default ctrlWrapper(sendLeadToEmail);
