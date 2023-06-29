@@ -1,5 +1,5 @@
 import express from "express";
-import sendLeadToEmail from "../../controllers/users.js";
+import sendLeadToEmail from "../../controllers/contact.js";
 import formSchema from "../../schemas/formSchema.js";
 import validateBody from "../../middlewares/validateBody.js";
 
